@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ticketmaster", "ticketmaster.csproj", "{09BECA4E-9B82-4960-863E-6C07FC659508}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09BECA4E-9B82-4960-863E-6C07FC659508}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09BECA4E-9B82-4960-863E-6C07FC659508}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09BECA4E-9B82-4960-863E-6C07FC659508}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09BECA4E-9B82-4960-863E-6C07FC659508}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF907C3B-DB6A-459E-AD96-F6A013727C63}
+	EndGlobalSection
+EndGlobal
