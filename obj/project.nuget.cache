@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "O4qzQvktVbhMSN6YwQmDdMIfMRuKryalycBlwsMEZG9FnCbR6Gpg9HsgXWkJqwHZw/EP8RZ5bXPijHR2N7VtaA==",
+  "dgSpecHash": "oqpxJPT+j8adBt2lI4Zw9QPJoxHEg+RwCEcUS1CK84LIwAR9UbvOIXcWsRc8KBxvXHgQuz+Jr8B6wCLKDw4s/w==",
   "success": true,
-  "projectFilePath": "F:\\Facultate\\ticketmaster\\ticketmaster.csproj",
+  "projectFilePath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Roland\\.nuget\\packages\\dnsclient\\1.3.1\\dnsclient.1.3.1.nupkg.sha512",
     "C:\\Users\\Roland\\.nuget\\packages\\microsoft.aspnet.webapi.client\\4.0.20710\\microsoft.aspnet.webapi.client.4.0.20710.nupkg.sha512",

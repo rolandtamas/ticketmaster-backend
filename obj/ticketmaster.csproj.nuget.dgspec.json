@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Facultate\\ticketmaster\\ticketmaster.csproj": {}
+    "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj": {}
   },
   "projects": {
-    "F:\\Facultate\\ticketmaster\\ticketmaster.csproj": {
+    "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Facultate\\ticketmaster\\ticketmaster.csproj",
+        "projectUniqueName": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
         "projectName": "ticketmaster",
-        "projectPath": "F:\\Facultate\\ticketmaster\\ticketmaster.csproj",
+        "projectPath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
         "packagesPath": "C:\\Users\\Roland\\.nuget\\packages\\",
-        "outputPath": "F:\\Facultate\\ticketmaster\\obj\\",
+        "outputPath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Roland\\AppData\\Roaming\\NuGet\\NuGet.Config",

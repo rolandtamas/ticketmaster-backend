@@ -48,16 +48,16 @@ namespace ticketmaster.Controllers
         }
 
         [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, ContactForm bookIn)
+        public IActionResult Update(string id, ContactForm cfin)
         {
-            var book = _formsService.Get(id);
+            var contactform = _formsService.Get(id);
 
-            if (book == null)
+            if (contactform == null)
             {
                 return NotFound();
             }
 
-            _formsService.Update(id, bookIn);
+            _formsService.Update(id, cfin);
 
             return NoContent();
         }
@@ -65,14 +65,14 @@ namespace ticketmaster.Controllers
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
-            var book = _formsService.Get(id);
+            var contactform = _formsService.Get(id);
 
-            if (book == null)
+            if (contactform == null)
             {
                 return NotFound();
             }
 
-            _formsService.Remove(book.Id);
+            _formsService.Remove(contactform.Id);
 
             return NoContent();
         }
