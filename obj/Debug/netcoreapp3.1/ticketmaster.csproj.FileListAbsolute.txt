@@ -96,3 +96,9 @@ F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\staticweb
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.dll
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.pdb
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.genruntimeconfig.cache
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.csproj.CoreCompileInputs.cache
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cs
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cache
