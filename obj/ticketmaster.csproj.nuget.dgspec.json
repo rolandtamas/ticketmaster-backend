@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj": {}
+    "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\ticketmaster.csproj": {}
   },
   "projects": {
-    "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj": {
+    "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\ticketmaster.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
+        "projectUniqueName": "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\ticketmaster.csproj",
         "projectName": "ticketmaster",
-        "projectPath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
-        "packagesPath": "C:\\Users\\Roland\\.nuget\\packages\\",
-        "outputPath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\obj\\",
+        "projectPath": "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\ticketmaster.csproj",
+        "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Roland\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -50,6 +50,14 @@
               "target": "Package",
               "version": "[2.10.3, )"
             },
+            "MongoDB.Driver.Core": {
+              "target": "Package",
+              "version": "[2.10.3, )"
+            },
+            "MongoDB.Entities": {
+              "target": "Package",
+              "version": "[12.1.2, )"
+            },
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[12.0.3, )"
@@ -69,6 +77,10 @@
             "Swashbuckle.Core": {
               "target": "Package",
               "version": "[5.6.0, )"
+            },
+            "mongocsharpdriver": {
+              "target": "Package",
+              "version": "[2.10.3, )"
             }
           },
           "imports": [

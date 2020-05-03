@@ -96,3 +96,64 @@ F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\staticweb
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.dll
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.pdb
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.genruntimeconfig.cache
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.csproj.CoreCompileInputs.cache
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cs
+F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\package-lock.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.exe
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.deps.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.runtimeconfig.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.runtimeconfig.dev.json
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.pdb
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\DnsClient.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\System.Net.Http.Formatting.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\System.Web.Http.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Bson.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Driver.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Driver.Core.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Libmongocrypt.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\SharpCompress.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Swashbuckle.Core.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.csprojAssemblyReference.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.AssemblyInfoInputs.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.AssemblyInfo.cs
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.RazorTargetAssemblyInfo.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.csproj.CopyComplete
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\staticwebassets\ticketmaster.StaticWebAssets.Manifest.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\staticwebassets\ticketmaster.StaticWebAssets.xml
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.pdb
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.genruntimeconfig.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Driver.Legacy.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.csproj.CoreCompileInputs.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Entities.dll
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\MongoDB.Entities.Core.dll
