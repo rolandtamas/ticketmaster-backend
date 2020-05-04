@@ -16,42 +16,47 @@ namespace ticketmaster.Controllers
     [Route("[controller]")]
     [ApiController]
     public class MatchController : ControllerBase
+
     {
+        
         private readonly MatchesService _matchService;
         private readonly IMongoCollection<Match> _matchesCollection;
-
-        private readonly TeamsService _teamService;
         private readonly IMongoCollection<Team> _teamsCollection;
-        public MatchController(MatchesService MatchService, TeamsService TeamService)
+
+       
+        public MatchController(MatchesService MatchService)
         {
             _matchService = MatchService;
-            _teamService = TeamService;
-            _matchesCollection = _matchService.GetCollection();
-            _teamsCollection = _teamService.GetCollection();
+        
+          
         }
         /* Changing this bit below so it connects to the Teams Collection and shows the Team Names as well*/
         [HttpGet]
         public ActionResult<List<Match>> Get()
         {
-            var query1 = from m in _matchesCollection.AsQueryable()
-                        join t in _teamsCollection.AsQueryable() on m.teamAwayId equals t.teamId into teamAwayInfo
+            return _matchService.Get();
 
-                        select new Match()
-                        {
-                            Id = m.Id,
-                            matchId = m.matchId,
-                            date = m.date,
-                            teamAwayId = m.teamAwayId,
-                            teamHostId = m.teamHostId,
-                            teamAway = teamAwayInfo.First()
+            /* THIS IS A JOIN QUERY */
+            /*
+            var query1 = from m in _matchesCollection.AsQueryable()
+                         join t in _teamsCollection.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
+
+                         select new Match()
+                         {
+                             Id = m.Id,
+
+                             date = m.date,
+                             teamAwayId = m.teamAwayId,
+                             teamHostId = m.teamHostId,
+                            teamAway = teamAwayInfo.First(),
+                            teamHost = null
                         };
-            var query2 = from m in query1
-                    join t in _teamsCollection.AsQueryable() on m.teamHostId equals t.teamId into teamHostInfo
+            var query2 = from m in query1.ToList()
+                    join t in _teamsCollection.AsQueryable() on m.teamHostId equals t.Id into teamHostInfo
 
                     select new Match()
                     {
                         Id = m.Id,
-                        matchId = m.matchId,
                         date = m.date,
                         teamAwayId = m.teamAwayId,
                         teamHostId = m.teamHostId,
@@ -61,6 +66,8 @@ namespace ticketmaster.Controllers
 
             var matchesAndTeams = query2.ToList();
             return matchesAndTeams;
+            */
+            /* THIS IS A QUERY USING DBREF */
         }
 
         [HttpGet("{id:length(24)}", Name = "GetMatch")]
@@ -109,7 +116,7 @@ namespace ticketmaster.Controllers
                 return NotFound();
             }
 
-            _matchService.Remove(match.Id);
+            _matchService.Remove(match);
 
             return NoContent();
         }

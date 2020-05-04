@@ -11,8 +11,7 @@ namespace ticketmaster.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        public Int32 formId { get; set; }
+        public ObjectId Id { get; set; }
         public string name{ get; set; }
         public string subject { get; set; }
         public string email { get; set; }

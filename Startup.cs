@@ -46,6 +46,15 @@ namespace ticketmaster
 
             services.AddSingleton<FormsService>(); /* FORMS COLLECTION IMPORTED */
 
+            services.Configure<TeamsDataBaseSettings>(
+       Configuration.GetSection(nameof(TeamsDataBaseSettings)));
+
+            services.AddSingleton<ITeamsDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<TeamsDataBaseSettings>>().Value);
+
+            services.AddSingleton<TeamsService>(); /* TEAMS COLELCTION IMPORTED */
+
+
             services.Configure<MatchesDataBaseSettings>(
         Configuration.GetSection(nameof(MatchesDataBaseSettings)));
 
@@ -54,13 +63,14 @@ namespace ticketmaster
 
             services.AddSingleton<MatchesService>(); /*MATCHES COLLECTION IMPORTED */
 
-            services.Configure<TeamsDataBaseSettings>(
-        Configuration.GetSection(nameof(TeamsDataBaseSettings)));
+            services.Configure<TicketsDataBaseSettings>(
+       Configuration.GetSection(nameof(TicketsDataBaseSettings)));
 
-            services.AddSingleton<ITeamsDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<TeamsDataBaseSettings>>().Value);
+            services.AddSingleton<ITicketsDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<TicketsDataBaseSettings>>().Value);
 
-            services.AddSingleton<TeamsService>(); /* TEAMS COLELCTION IMPORTED */
+            services.AddSingleton<TicketsService>(); /*TICKETS COLLECTION IMPORTED */
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

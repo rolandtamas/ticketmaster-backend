@@ -23,7 +23,7 @@ namespace ticketmaster.Services
             _forms.Find(form => true).ToList();
        
 
-        public ContactForm Get(string id) => _forms.Find<ContactForm>(form => form.Id==id).FirstOrDefault();
+        public ContactForm Get(string id) => _forms.Find<ContactForm>(form => form.Id.Equals(id)).FirstOrDefault();
 
         public ContactForm Create(ContactForm cf)
         {
@@ -31,13 +31,13 @@ namespace ticketmaster.Services
             return cf;
         }
 
-        public void Update(string id, ContactForm cfin) => _forms.ReplaceOne(form => form.Id == id, cfin);
+        public void Update(string id, ContactForm cfin) => _forms.ReplaceOne(form => form.Id.Equals(id), cfin);
 
         public void Remove(ContactForm cfin) =>
             _forms.DeleteOne(form => form.Id == cfin.Id);
 
         public void Remove(string id) =>
-            _forms.DeleteOne(form => form.Id == id);
+            _forms.DeleteOne(form => form.Id.Equals(id));
 
 
     }
