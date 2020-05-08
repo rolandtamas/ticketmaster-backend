@@ -8,6 +8,7 @@ using MongoDB.Bson.Serialization;
 using MongoDB.Bson;
 using MongoDB.Driver.Builders;
 using System.Diagnostics;
+using Microsoft.VisualBasic;
 
 namespace ticketmaster.Services
 {
@@ -33,11 +34,84 @@ namespace ticketmaster.Services
        
         public List<Ticket> Get() {
 
-            var matches = _matchesService.GetMatchesAsIQueryable();
-            /* THIS IS A JOIN QUERY */
+            var matches = _matchesService.GetCollection();
+            var teams = _matchesService.GetTeamsService().GetCollection();
+            /*var query = _tickets.Aggregate()
+                .Unwind(x => x.match)
+                .Lookup(
+                        foreignCollectionName: "teams",
+                        localField: "match.teamHostId",
+                        foreignField: "Id",
+                        @as: "match");
+            var result = query.ToList();*/
+
+            /* ONE QUERY FOR 3 JOINS */
             
-            var query = from t in _tickets.AsQueryable()
-                         join m in matches.AsQueryable() on t.matchId equals m.Id into matchInfo
+             var query = from ti in _tickets.AsQueryable()
+                         join m in matches.AsQueryable()
+                             on ti.matchId equals m.Id into matchInfo
+                         join te in teams.AsQueryable()
+                             on ti.match.teamAwayId equals te.Id into teamAwayInfo
+
+                         join teh in teams.AsQueryable()
+                             on ti.match.teamHostId equals teh.Id into teamHostInfo
+
+                         select new Ticket()
+                         {
+                             Id = ti.Id,
+                             status = ti.status,
+                             seat = ti.seat,
+                             sector = ti.sector,
+                             price = ti.price,
+                             matchId = ti.matchId,
+
+                             match = new Match()
+                             {
+                                 Id = ti.match.Id,
+                                 date = ti.match.date,
+                                 teamAwayId = ti.match.teamHostId,
+                                 teamHostId = ti.match.teamHostId,
+                                 teamAway = teamAwayInfo.FirstOrDefault(),
+                                 teamHost = teamHostInfo.FirstOrDefault()
+                             }
+
+
+                         }; 
+
+
+
+            /* THIS IS A JOIN QUERY FOR MATCHES & TEAMS*/
+            
+            var query1 = from m in matches.AsQueryable()
+                         join t in teams.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
+
+                         select new Match()
+                         {
+                             Id = m.Id,
+
+                             date = m.date,
+                             teamAwayId = m.teamAwayId,
+                             teamHostId = m.teamHostId,
+                             teamAway = teamAwayInfo.First(),
+                             teamHost = null
+                         };
+            var query2 = from m in query1.ToList()
+                         join t in teams.AsQueryable() on m.teamHostId equals t.Id into teamHostInfo
+
+                         select new Match()
+                         {
+                             Id = m.Id,
+                             date = m.date,
+                             teamAwayId = m.teamAwayId,
+                             teamHostId = m.teamHostId,
+                             teamAway = m.teamAway,
+                             teamHost = teamHostInfo.First()
+                         };
+          
+            /*JOIN QUERY FOR TICKETS & MATCHES */
+            
+            var query3 = from t in _tickets.AsQueryable()
+                         join m in query2 on t.matchId equals m.Id into matchInfo
 
                          select new Ticket()
                          {
@@ -47,10 +121,10 @@ namespace ticketmaster.Services
                              sector = t.sector,
                              price = t.price,
                              matchId = t.matchId,
-                             match = matchInfo.First() 
-                     };
-            var ticketsAndMatches = query.ToList();
-            return ticketsAndMatches;
+                             match = matchInfo.First()
+                         }; 
+            var ticketsAndMatches = query3.ToList(); 
+            return ticketsAndMatches; 
         }
         
         public Ticket Get(string id) =>

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
@@ -69,7 +70,7 @@ namespace ticketmaster.Controllers
             */
             /* THIS IS A QUERY USING DBREF */
         }
-
+        
         [HttpGet("{id:length(24)}", Name = "GetMatch")]
         public ActionResult<Match> Get(string id)
         {
