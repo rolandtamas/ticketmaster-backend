@@ -103,7 +103,6 @@ F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmas
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cs
 F:\Facultate\ticketmaster\BackEnd\ticketmaster\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\appsettings.json
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Properties\launchSettings.json
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\package-lock.json
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\ticketmaster.exe
