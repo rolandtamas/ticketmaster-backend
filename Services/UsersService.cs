@@ -12,6 +12,7 @@ using Microsoft.VisualBasic;
 
 namespace ticketmaster.Services
 {
+
     public class UsersService
     {
         private readonly IMongoCollection<User> _users;
