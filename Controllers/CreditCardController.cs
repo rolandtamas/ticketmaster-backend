@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,59 +14,59 @@ namespace ticketmaster.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class TicketController : ControllerBase
+    public class CreditCardController : ControllerBase
 
     {
         
-        private readonly TicketsService _ticketService;
+        private readonly CreditCardsService _creditCardsService;
        
-        public TicketController(TicketsService TicketService)
+        public CreditCardController(CreditCardsService CreditCardService)
         {
-            _ticketService = TicketService;
+            _creditCardsService = CreditCardService;
         }
         
         [Authorize]
         [HttpGet]
-        public ActionResult<List<Ticket>> Get()
+        public ActionResult<List<CreditCard>> Get()
         {
             
-            return _ticketService.Get();
+            return _creditCardsService.Get();
 
         }
         
         [Authorize]
         [HttpGet("byUsername")]
-        public async Task<ActionResult<List<Ticket>>> Get(string username)
+        public async Task<ActionResult<List<CreditCard>>> Get(string username)
         {
-            var tickets = await _ticketService.GetByUsername(username);
+            var creditCards = await _creditCardsService.GetByUsername(username);
 
-            if (tickets == null)
+            if (creditCards == null)
             {
                 return NotFound();
             }
 
-            return tickets;
+            return creditCards;
         }
 
         [HttpPost]
-        public ActionResult<Ticket> Create(Ticket m)
+        public ActionResult<CreditCard> Create(CreditCard m)
         {
-            _ticketService.Create(m);
+            _creditCardsService.Create(m);
 
-            return CreatedAtRoute("GetTicket", new { id = m.Id.ToString() }, m);
+            return CreatedAtRoute("GetCreditCard", new { id = m.Id.ToString() }, m);
         }
 
         [HttpPut("{id:length(24)}")]
-        public IActionResult Update(string id, Ticket min)
+        public IActionResult Update(string id, CreditCard min)
         {
-            var contactform = _ticketService.Get(id);
+            var contactform = _creditCardsService.Get(id);
 
             if (contactform == null)
             {
                 return NotFound();
             }
 
-            _ticketService.Update(id, min);
+            _creditCardsService.Update(id, min);
 
             return NoContent();
         }
@@ -74,14 +74,14 @@ namespace ticketmaster.Controllers
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)
         {
-            var ticket = _ticketService.Get(id);
+            var creditCard = _creditCardsService.Get(id);
 
-            if (ticket == null)
+            if (creditCard == null)
             {
                 return NotFound();
             }
 
-            _ticketService.Remove(ticket);
+            _creditCardsService.Remove(creditCard);
 
             return NoContent();
         }

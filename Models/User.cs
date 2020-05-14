@@ -18,5 +18,10 @@ namespace ticketmaster.Models
         
         public byte[] passwordSalt { get; set; }
 
+        public string firstName {get; set;}
+        public string lastName {get; set;}
+        public ObjectId[] creditCards {get; set;}
+        public ObjectId[] tickets {get; set;}
+
     }
 }

@@ -43,20 +43,21 @@ namespace ticketmaster.Services
        
         }
 
+
         public async Task<User> Create(User User)
         {
              await _users.InsertOneAsync(User);
             return User;
         }
 
-        public void Update(string id, User UserIn) =>
-            _users.ReplaceOne(User => User.Id.Equals(id), UserIn);
+        public void Update(string username, User UserIn) =>
+            _users.ReplaceOne(User => User.username.Equals(username), UserIn);
 
         public void Remove(User UserIn) =>
-            _users.DeleteOne(User => User.Id == UserIn.Id);
+            _users.DeleteOne(User => User.username == UserIn.username);
 
-        public void Remove(string id) =>
-            _users.DeleteOne(User => User.Id.Equals(id));
+        public void Remove(string username) =>
+            _users.DeleteOne(User => User.username.Equals(username));
 
         /* Small updates 02.05.2020  */
         /* Inserting a Filter Function So You Can Query The Collection With Simple jsonQueries */

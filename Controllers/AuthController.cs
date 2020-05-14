@@ -42,6 +42,8 @@ namespace ticketmaster.Controllers
             var userToCreate = new User
             {
                 username = userForRegisterDTO.username,
+                firstName = userForRegisterDTO.firstName,
+                lastName = userForRegisterDTO.lastName,
 
 
             };

@@ -30,8 +30,10 @@ namespace ticketmaster.Services
         }
        
         public List<Match> Get() {
-            var teams = _teamService.GetCollection();
+            return _matches.Find(match => true).ToList();
+           /* var teams = _teamService.GetCollection();
             /* THIS IS A JOIN QUERY */
+            /*
             var query1 = from m in _matches.AsQueryable()
                          join t in teams.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
 
@@ -59,52 +61,14 @@ namespace ticketmaster.Services
                          };
 
             var matchesAndTeams = query2.ToList();
-            return matchesAndTeams;
+            return matchesAndTeams; */
 
 
 
             /*return _matches.Find(match => true).ToList();*/
 
         }
-        public IQueryable<Match> GetMatchesAsIQueryable()
-        {
-            var teams = _teamService.GetCollection();
-            /* THIS IS A JOIN QUERY */
-            var query1 = from m in _matches.AsQueryable()
-                         join t in teams.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
-
-                         select new Match()
-                         {
-                             Id = m.Id,
-
-                             date = m.date,
-                             teamAwayId = m.teamAwayId,
-                             teamHostId = m.teamHostId,
-                             teamAway = teamAwayInfo.First(),
-                             teamHost = null
-                         };
-            var query2 = from m in query1
-                         join t in teams.AsQueryable() on m.teamHostId equals t.Id into teamHostInfo
-
-                         select new Match()
-                         {
-                             Id = m.Id,
-                             date = m.date,
-                             teamAwayId = m.teamAwayId,
-                             teamHostId = m.teamHostId,
-                             teamAway = m.teamAway,
-                             teamHost = teamHostInfo.First()
-                         };
-
-
-            return query2;
-
-
-
-            /*return _matches.Find(match => true).ToList();*/
-
-        }
-
+       
 
 
         public Match Get(string id) =>

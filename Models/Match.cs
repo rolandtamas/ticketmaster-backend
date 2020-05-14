@@ -17,12 +17,8 @@ namespace ticketmaster.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId Id { get; set; }
         public DateTime date { get; set; }
-        public ObjectId teamHostId { get; set; }
-        public ObjectId teamAwayId { get; set; }
-        [BsonIgnore]
-         public Team teamAway { get; set; } /*This is the actual object that will get assigned in the query in the MatchService. */
-         [BsonIgnore] 
-         public Team teamHost { get; set; }
+        public string teamAway { get; set; } /*This is the actual object that will get assigned in the query in the MatchService. */
+        public string teamHost { get; set; }
        /* 
          public Team GetTeamAway (MongoDatabase db)
          {

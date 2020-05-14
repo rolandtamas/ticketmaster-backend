@@ -14,5 +14,9 @@ namespace ticketmaster.DTO
         [Required]
         [StringLength(20,MinimumLength = 4, ErrorMessage = "You Must Specify A Password With At Least 4 And Maximum 20 Characters")]
         public string password { get; set; }
+        [Required]
+        public string firstName {get; set;}
+        [Required]
+        public string lastName {get; set;}
     }
 }
