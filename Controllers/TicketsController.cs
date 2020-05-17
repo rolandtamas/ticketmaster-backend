@@ -39,7 +39,6 @@ namespace ticketmaster.Controllers
 
         }
 
-
         [HttpPost]
         public ActionResult<Tickets> Create(Tickets t)
         {
