@@ -15,5 +15,6 @@ namespace ticketmaster.Models
         public string home { get; set; }
         public string away { get; set; }
         public string date { get; set; }
+        public int ticketCount { get; set; }
     }
 }
