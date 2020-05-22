@@ -10,12 +10,13 @@ namespace ticketmaster.Services
     public class MatchesService
     {
         private readonly IMongoCollection<Match> _matches;
+        private readonly TicketsService _ticketservice;
 
-        public MatchesService(IMatchesDatabaseSettings settings)
+        public MatchesService(IMatchesDatabaseSettings settings, TicketsService ticketservice)
         {
             var client = new MongoClient(settings.ConnectionString);
             var database = client.GetDatabase(settings.DatabaseName);
-
+            _ticketservice = ticketservice;
             _matches = database.GetCollection<Match>(settings.MatchesCollectionName);
         }
         public List<Match> Get() =>
