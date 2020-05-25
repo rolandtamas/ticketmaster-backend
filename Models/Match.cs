@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Driver;
+using MongoDB.Entities;
+using MongoDB.Entities.Core;
+
 
 namespace ticketmaster.Models
 {
@@ -11,11 +15,22 @@ namespace ticketmaster.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        public string home { get; set; }
-        public string away { get; set; }
-        public string date { get; set; }
+        public ObjectId Id { get; set; }
+        public DateTime date { get; set; }
+        public ObjectId teamHostId { get; set; }
+        public ObjectId teamAwayId { get; set; }
         [BsonIgnore]
-        public int ticketCount { get; set; }
+         public Team teamAway { get; set; } /*This is the actual object that will get assigned in the query in the MatchService. */
+         [BsonIgnore] 
+         public Team teamHost { get; set; }
+       /* 
+         public Team GetTeamAway (MongoDatabase db)
+         {
+             return this.teamAwayObject = db.FetchDBRefAs<Team>(teamAway);
+         }
+         public Team GetTeamHost (MongoDatabase db)
+         {
+             return this.teamHostObject = db.FetchDBRefAs<Team>(teamHost);
+         } */ 
     }
 }

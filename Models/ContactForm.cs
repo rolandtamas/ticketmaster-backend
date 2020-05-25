@@ -11,10 +11,11 @@ namespace ticketmaster.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public string Id { get; set; }
-        public string Name{ get; set; }
-        public string Email { get; set; }
-        public string Message { get; set; }
+        public ObjectId Id { get; set; }
+        public string name{ get; set; }
+        public string subject { get; set; }
+        public string email { get; set; }
+        public string message { get; set; }
 
     }
 }

@@ -72,7 +72,7 @@ namespace ticketmaster.Controllers
                 return NotFound();
             }
 
-            _formsService.Remove(contactform.Id);
+            _formsService.Remove(contactform);
 
             return NoContent();
         }

@@ -44,20 +44,32 @@ namespace ticketmaster
             services.AddSingleton<IFormsDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<FormsDatabaseSettings>>().Value);
 
-            services.AddSingleton<FormsService>();
+            services.AddSingleton<FormsService>(); /* FORMS COLLECTION IMPORTED */
 
-            services.Configure<MatchesDatabaseSettings>(
-        Configuration.GetSection(nameof(MatchesDatabaseSettings)));
+            services.Configure<TeamsDataBaseSettings>(
+       Configuration.GetSection(nameof(TeamsDataBaseSettings)));
+
+            services.AddSingleton<ITeamsDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<TeamsDataBaseSettings>>().Value);
+
+            services.AddSingleton<TeamsService>(); /* TEAMS COLELCTION IMPORTED */
+
+
+            services.Configure<MatchesDataBaseSettings>(
+        Configuration.GetSection(nameof(MatchesDataBaseSettings)));
 
             services.AddSingleton<IMatchesDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<MatchesDatabaseSettings>>().Value);
+                sp.GetRequiredService<IOptions<MatchesDataBaseSettings>>().Value);
 
-            services.AddSingleton<MatchesService>();
+            services.AddSingleton<MatchesService>(); /*MATCHES COLLECTION IMPORTED */
 
-            services.Configure<TicketsDatabaseSettings>(Configuration.GetSection(nameof(TicketsDatabaseSettings)));
-            services.AddSingleton<ITicketsDatabaseSettings>(sp => sp.GetRequiredService<IOptions<TicketsDatabaseSettings>>().Value);
-            services.AddSingleton<TicketsService>();
+            services.Configure<TicketsDataBaseSettings>(
+       Configuration.GetSection(nameof(TicketsDataBaseSettings)));
 
+            services.AddSingleton<ITicketsDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<TicketsDataBaseSettings>>().Value);
+
+            services.AddSingleton<TicketsService>(); /*TICKETS COLLECTION IMPORTED */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

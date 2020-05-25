@@ -110,6 +110,15 @@
           "lib/netcoreapp2.1/Microsoft.Bcl.HashCode.dll": {}
         }
       },
+      "Microsoft.CSharp/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/netcoreapp2.0/_._": {}
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/_._": {}
+        }
+      },
       "Microsoft.EntityFrameworkCore/3.1.3": {
         "type": "package",
         "dependencies": {
@@ -377,6 +386,21 @@
           }
         }
       },
+      "mongocsharpdriver/2.10.3": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.10.3",
+          "MongoDB.Driver": "2.10.3",
+          "MongoDB.Driver.Core": "2.10.3",
+          "NETStandard.Library": "1.6.1"
+        },
+        "compile": {
+          "lib/netstandard1.5/MongoDB.Driver.Legacy.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.5/MongoDB.Driver.Legacy.dll": {}
+        }
+      },
       "MongoDB.Bson/2.10.3": {
         "type": "package",
         "dependencies": {
@@ -432,6 +456,33 @@
         },
         "runtime": {
           "lib/netstandard1.5/MongoDB.Driver.Core.dll": {}
+        }
+      },
+      "MongoDB.Entities/12.1.2": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
+          "MongoDB.Driver": "2.10.3",
+          "MongoDB.Entities.Core": "1.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/MongoDB.Entities.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MongoDB.Entities.dll": {}
+        }
+      },
+      "MongoDB.Entities.Core/1.3.0": {
+        "type": "package",
+        "dependencies": {
+          "MongoDB.Bson": "2.10.2"
+        },
+        "compile": {
+          "lib/netstandard2.0/MongoDB.Entities.Core.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MongoDB.Entities.Core.dll": {}
         }
       },
       "MongoDB.Libmongocrypt/1.0.0": {
@@ -2332,6 +2383,75 @@
         "version.txt"
       ]
     },
+    "Microsoft.CSharp/4.7.0": {
+      "sha512": "pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
+      "type": "package",
+      "path": "microsoft.csharp/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/netcore50/Microsoft.CSharp.dll",
+        "lib/netcoreapp2.0/_._",
+        "lib/netstandard1.3/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.dll",
+        "lib/netstandard2.0/Microsoft.CSharp.xml",
+        "lib/portable-net45+win8+wp8+wpa81/_._",
+        "lib/uap10.0.16299/_._",
+        "lib/win8/_._",
+        "lib/wp80/_._",
+        "lib/wpa81/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "microsoft.csharp.4.7.0.nupkg.sha512",
+        "microsoft.csharp.nuspec",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/netcore50/Microsoft.CSharp.dll",
+        "ref/netcore50/Microsoft.CSharp.xml",
+        "ref/netcore50/de/Microsoft.CSharp.xml",
+        "ref/netcore50/es/Microsoft.CSharp.xml",
+        "ref/netcore50/fr/Microsoft.CSharp.xml",
+        "ref/netcore50/it/Microsoft.CSharp.xml",
+        "ref/netcore50/ja/Microsoft.CSharp.xml",
+        "ref/netcore50/ko/Microsoft.CSharp.xml",
+        "ref/netcore50/ru/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hans/Microsoft.CSharp.xml",
+        "ref/netcore50/zh-hant/Microsoft.CSharp.xml",
+        "ref/netcoreapp2.0/_._",
+        "ref/netstandard1.0/Microsoft.CSharp.dll",
+        "ref/netstandard1.0/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/de/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/es/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/fr/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/it/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ja/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ko/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/ru/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hans/Microsoft.CSharp.xml",
+        "ref/netstandard1.0/zh-hant/Microsoft.CSharp.xml",
+        "ref/netstandard2.0/Microsoft.CSharp.dll",
+        "ref/netstandard2.0/Microsoft.CSharp.xml",
+        "ref/portable-net45+win8+wp8+wpa81/_._",
+        "ref/uap10.0.16299/_._",
+        "ref/win8/_._",
+        "ref/wp80/_._",
+        "ref/wpa81/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "Microsoft.EntityFrameworkCore/3.1.3": {
       "sha512": "+LyCAQqSxBhorS0xz6gH0AXR05JkSz4L/Dn7ZgMvwMxAqYMSzMso0nHUv4PJbWI5sgjHxYCTFf0JeNLi/8ctpg==",
       "type": "package",
@@ -2709,6 +2829,22 @@
         "runtimes/win/lib/netstandard1.3/Microsoft.Win32.Registry.dll"
       ]
     },
+    "mongocsharpdriver/2.10.3": {
+      "sha512": "QFLZ81CJ2E955LYVKWmwjngLBUCq+PhE2NYoE+RQt2noo4qWMAnGFS1Sdio5DxB8Zxwnv2+mtiogKnt0l+gc9w==",
+      "type": "package",
+      "path": "mongocsharpdriver/2.10.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "License.txt",
+        "lib/net452/MongoDB.Driver.Legacy.dll",
+        "lib/net452/MongoDB.Driver.Legacy.xml",
+        "lib/netstandard1.5/MongoDB.Driver.Legacy.dll",
+        "lib/netstandard1.5/MongoDB.Driver.Legacy.xml",
+        "mongocsharpdriver.2.10.3.nupkg.sha512",
+        "mongocsharpdriver.nuspec"
+      ]
+    },
     "MongoDB.Bson/2.10.3": {
       "sha512": "UT6w7vsiXlCH7mABxj/NuaGR0KWfXIW5zP5RHW16JrviiygSoEb6fEUhs1QgrjdcNHP+gns1/T9Sfqi4KUPPew==",
       "type": "package",
@@ -2755,6 +2891,35 @@
         "lib/netstandard1.5/MongoDB.Driver.Core.xml",
         "mongodb.driver.core.2.10.3.nupkg.sha512",
         "mongodb.driver.core.nuspec"
+      ]
+    },
+    "MongoDB.Entities/12.1.2": {
+      "sha512": "JU5n8RT6nncOSqpw/U+fVwOvgtykpAsDyTAsDs2p6bJRM3TQ2DIomc3QLiqWYk4Zl5Il7lx4V57WPou0Ugw7Sg==",
+      "type": "package",
+      "path": "mongodb.entities/12.1.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/netstandard2.0/MongoDB.Entities.dll",
+        "lib/netstandard2.0/MongoDB.Entities.xml",
+        "mongodb.entities.12.1.2.nupkg.sha512",
+        "mongodb.entities.nuspec"
+      ]
+    },
+    "MongoDB.Entities.Core/1.3.0": {
+      "sha512": "OYcRwokbM6DXQGghGZ/Nb0tATv03ziBSPwtkeDk8NH3G0tADn7ut32sOkeFBSu4ltG9sO6B2dyCUuBVA4j6nmw==",
+      "type": "package",
+      "path": "mongodb.entities.core/1.3.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/netstandard2.0/MongoDB.Entities.Core.dll",
+        "mongodb.entities.core.1.3.0.nupkg.sha512",
+        "mongodb.entities.core.nuspec"
       ]
     },
     "MongoDB.Libmongocrypt/1.0.0": {
@@ -7227,11 +7392,14 @@
       "Microsoft.AspNetCore.Cors >= 2.2.0",
       "Microsoft.EntityFrameworkCore >= 3.1.3",
       "MongoDB.Driver >= 2.10.3",
+      "MongoDB.Driver.Core >= 2.10.3",
+      "MongoDB.Entities >= 12.1.2",
       "Newtonsoft.Json >= 12.0.3",
       "Swashbuckle.AspNetCore.Swagger >= 5.4.0",
       "Swashbuckle.AspNetCore.SwaggerGen >= 5.4.0",
       "Swashbuckle.AspNetCore.SwaggerUI >= 5.4.0",
-      "Swashbuckle.Core >= 5.6.0"
+      "Swashbuckle.Core >= 5.6.0",
+      "mongocsharpdriver >= 2.10.3"
     ]
   },
   "packageFolders": {
@@ -7283,6 +7451,14 @@
             "target": "Package",
             "version": "[2.10.3, )"
           },
+          "MongoDB.Driver.Core": {
+            "target": "Package",
+            "version": "[2.10.3, )"
+          },
+          "MongoDB.Entities": {
+            "target": "Package",
+            "version": "[12.1.2, )"
+          },
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[12.0.3, )"
@@ -7302,6 +7478,10 @@
           "Swashbuckle.Core": {
             "target": "Package",
             "version": "[5.6.0, )"
+          },
+          "mongocsharpdriver": {
+            "target": "Package",
+            "version": "[2.10.3, )"
           }
         },
         "imports": [
@@ -7327,6 +7507,12 @@
     }
   },
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",
