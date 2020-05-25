@@ -11,5 +11,5 @@ Development Log:
 	
 	[ x ] Buy ticket component; a user can buy a ticket, complete a form and submit his request to the server.
 	
-	[  ] Login & Register Component; allows user registration and Login
+	[ x ] Login & Register Component; allows user registration and Login
 
