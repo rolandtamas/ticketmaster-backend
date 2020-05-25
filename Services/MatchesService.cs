@@ -68,7 +68,48 @@ namespace ticketmaster.Services
             /*return _matches.Find(match => true).ToList();*/
 
         }
+<<<<<<< HEAD
        
+=======
+        public IQueryable<Match> GetMatchesAsIQueryable()
+        {
+            var teams = _teamService.GetCollection();
+            /* THIS IS A JOIN QUERY */
+            var query1 = from m in _matches.AsQueryable()
+                         join t in teams.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
+
+                         select new Match()
+                         {
+                             Id = m.Id,
+
+                             date = m.date,
+                             teamAwayId = m.teamAwayId,
+                             teamHostId = m.teamHostId,
+                             teamAway = teamAwayInfo.First(),
+                             teamHost = null
+                         };
+            var query2 = from m in query1
+                         join t in teams.AsQueryable() on m.teamHostId equals t.Id into teamHostInfo
+
+                         select new Match()
+                         {
+                             Id = m.Id,
+                             date = m.date,
+                             teamAwayId = m.teamAwayId,
+                             teamHostId = m.teamHostId,
+                             teamAway = m.teamAway,
+                             teamHost = teamHostInfo.First()
+                         };
+
+
+            return query2;
+
+
+
+            /*return _matches.Find(match => true).ToList();*/
+        }
+
+>>>>>>> master
 
 
         public Match Get(string id) =>
@@ -82,6 +123,10 @@ namespace ticketmaster.Services
 
         public void Update(string id, Match MatchIn) =>
             _matches.ReplaceOne(Match => Match.Id.Equals(id), MatchIn);
+
+        /*public void Update(int amount, Match m) { 
+            _matches.ReplaceOne(Match => Match.ticketCount == amount, m);
+        }*/
 
         public void Remove(Match MatchIn) =>
             _matches.DeleteOne(Match => Match.Id == MatchIn.Id);
