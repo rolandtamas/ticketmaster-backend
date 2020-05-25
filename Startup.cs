@@ -16,6 +16,14 @@ using Swashbuckle.Swagger;
 using ticketmaster.Models;
 using ticketmaster.Services;
 using Microsoft.AspNetCore.Cors;
+using ticketmaster.Data;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using System.Net;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.AspNetCore.Http;
+using ticketmaster.Helpers;
 
 namespace ticketmaster
 {
@@ -70,6 +78,37 @@ namespace ticketmaster
                 sp.GetRequiredService<IOptions<TicketsDataBaseSettings>>().Value);
 
             services.AddSingleton<TicketsService>(); /*TICKETS COLLECTION IMPORTED */
+
+            services.Configure<UsersDataBaseSettings>(
+      Configuration.GetSection(nameof(UsersDataBaseSettings)));
+
+            services.AddSingleton<IUsersDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<UsersDataBaseSettings>>().Value);
+
+            services.AddSingleton<UsersService>(); /*USERS COLLECTION IMPORTED */
+
+            services.Configure<CreditCardsDataBaseSettings>(
+      Configuration.GetSection(nameof(CreditCardsDataBaseSettings)));
+
+            services.AddSingleton<ICreditCardsDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<CreditCardsDataBaseSettings>>().Value);
+
+            services.AddSingleton<CreditCardsService>(); /*CREDIT CARDS COLLECTION */
+
+            services.AddScoped<IAuthRepository, AuthRepository>(); /*ADDING THE AUTH REPOSITORY*/
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
+                         .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -79,6 +118,22 @@ namespace ticketmaster
             {
                 app.UseDeveloperExceptionPage();
             }
+            else
+            {
+                app.UseExceptionHandler(builder => {
+                    builder.Run(async context => {
+                        context.Response.StatusCode = (int)HttpStatusCode.InternalServerError;
+                        var error = context.Features.Get<IExceptionHandlerFeature>();
+                        if(error !=null)
+                        {
+                            context.Response.AddApplicationError(error.Error.Message);
+                            await context.Response.WriteAsync(error.Error.Message);
+                        }
+                    });
+                });
+            }
+
+            app.UseAuthentication();
 
             app.UseCors(options =>
             options.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());

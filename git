@@ -1,0 +1,85 @@
+[33mcommit 30358a99969e7c5fd4a82b7e30e12f1aac0a522f[m[33m ([m[1;36mHEAD -> [m[1;32mcluster[m[33m)[m
+Author: sergiuradu5 <sergiuradu5@gmail.com>
+Date:   Fri May 8 12:22:24 2020 +0200
+
+    Not A good commit (appsettings.json removed)
+
+[33mcommit b5769fa8070047b6745a73b5f2d6551cab89f497[m
+Author: sergiuradu5 <sergiuradu5@gmail.com>
+Date:   Fri May 8 11:53:26 2020 +0200
+
+    Added a Login & Register Feature into our Backend
+
+[33mcommit c55396a3d26b8c1bfe9f9a8bf6b84ff89b408476[m
+Author: sergiuradu5 <sergiuradu5@gmail.com>
+Date:   Fri May 8 11:50:43 2020 +0200
+
+    Added a working Login and Register Feature in our Backend
+
+[33mcommit ad9f611e38ae309b083ad6d3b05c813d07b20bcc[m[33m ([m[1;31morigin/cluster[m[33m)[m
+Author: sergiuradu5 <sergiuradu5@gmail.com>
+Date:   Tue May 5 13:10:49 2020 +0200
+
+    Connected the backend to MongoDB Atlas MacrosoftCluster, via Client Role
+
+[33mcommit 29d1bff55336f82aee6570ffce91dd8ae178e348[m[33m ([m[1;31morigin/login[m[33m)[m
+Author: sergiuradu5 <sergiuradu5@gmail.com>
+Date:   Mon May 4 19:17:56 2020 +0200
+
+    The Join Between Matches & Teams is working, the Join Between Tickets and Matches is not working yet
+
+[33mcommit 3231258c201f7648c7d3d14049ff01c6bff64813[m
+Merge: 409e031 e50a369
+Author: sergiuradu5 <sergiuradu5@gmail.com>
+Date:   Sun May 3 16:07:03 2020 +0200
+
+    Made The TeamController, TeamDatabaseSettings, The Backend takes data from the Matches collection and joins it with the Teams Collection
+
+[33mcommit 409e031b12d76a15d7cd96202d7239dd73634442[m[33m ([m[1;32mmaster[m[33m)[m
+Merge: 85b58bb 3e065ba
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 17:41:21 2020 +0300
+
+    Fixed Readme
+
+[33mcommit 85b58bb8f726d451780ebef3d419f245c786a7fd[m
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 17:38:40 2020 +0300
+
+    Added README
+
+[33mcommit 3e065ba273269a8b58dc08a8470c59b48a4fd8c8[m
+Author: Roland Tamas <33568801+rolandtamas@users.noreply.github.com>
+Date:   Wed Apr 29 17:36:55 2020 +0300
+
+    Update README.md
+
+[33mcommit cb8397f72043f28f2dd91bb606976ab96aea8262[m
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 17:36:25 2020 +0300
+
+    Added README
+
+[33mcommit 34553bf7e563a38b8b80136d65895b5ebaff2d73[m
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 17:35:15 2020 +0300
+
+    Added README
+
+[33mcommit e50a369a7d85978f915284e35d1dc206912a35de[m[33m ([m[1;31morigin/matches[m[33m)[m
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 17:07:51 2020 +0300
+
+    Added the matches backend
+
+[33mcommit 56f6e07bba3128682cae51464edc8780282a4a2a[m
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 16:04:23 2020 +0300
+
+    Deleted useless weatherforecast
+
+[33mcommit 76097ee2c1191d67b0a12e73a17f2a68d079d94c[m
+Author: Roland Tamas <rolandtamas98@gmail.com>
+Date:   Wed Apr 29 01:06:03 2020 +0300
+
+    Contact component working properly

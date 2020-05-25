@@ -6,9 +6,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using ticketmaster.Models;
+using ticketmaster.DTO;
 using ticketmaster.Services;
-
-
+using Microsoft.AspNetCore.Authorization;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ticketmaster.Controllers
@@ -20,12 +20,15 @@ namespace ticketmaster.Controllers
     {
         
         private readonly TicketsService _ticketService;
+        private readonly UsersService _usersService;
        
-        public TicketController(TicketsService TicketService)
+        public TicketController(TicketsService ticketService, UsersService usersService)
         {
-            _ticketService = TicketService;
+            _ticketService = ticketService;
+            _usersService = usersService;
         }
-        /* Changing this bit below so it connects to the Teams Collection and shows the Team Names as well*/
+        
+        [Authorize]
         [HttpGet]
         public ActionResult<List<Ticket>> Get()
         {
@@ -33,18 +36,19 @@ namespace ticketmaster.Controllers
             return _ticketService.Get();
 
         }
-
-        [HttpGet("{id:length(24)}", Name = "GetTicket")]
-        public ActionResult<Ticket> Get(string id)
+        
+        [Authorize]
+        [HttpGet("byUsername")]
+        public async Task<ActionResult<List<Ticket>>> Get(string username)
         {
-            var ticket = _ticketService.Get(id);
+            var tickets = await _ticketService.GetByUsername(username);
 
-            if (ticket == null)
+            if (tickets == null)
             {
                 return NotFound();
             }
 
-            return ticket;
+            return tickets;
         }
 
         [HttpPost]
@@ -54,8 +58,8 @@ namespace ticketmaster.Controllers
 
             return CreatedAtRoute("GetTicket", new { id = m.Id.ToString() }, m);
         }
-
-        [HttpPut("{id:length(24)}")]
+        
+        [HttpPut]
         public IActionResult Update(string id, Ticket min)
         {
             var contactform = _ticketService.Get(id);
@@ -69,6 +73,62 @@ namespace ticketmaster.Controllers
 
             return NoContent();
         }
+        //TICKET CANCELATION
+        [Authorize]
+        [HttpPut("cancel")]
+        public async Task<IActionResult> Update(string username, string ticketId)
+        {
+            var ticket = _ticketService.Get(ticketId);
+
+            if (ticket == null)
+            {
+                return NotFound();
+            }
+
+            ticket.status=1;
+
+            _ticketService.Update(ticketId, ticket);
+
+            var user = await _usersService.Get(username);
+            user.tickets.Remove(ticketId);
+            _usersService.Update(username, user);
+
+
+            return NoContent();
+        }
+        //TICKET PURCHASE
+        [Authorize]
+        [HttpPut("buy")]
+        public async Task<IActionResult> Update([FromBody]TicketForBuyingDTO model, [FromQuery]string username)
+        {
+            var tickets = _ticketService.GetAvailableByMatchId(model.matchid);
+
+            if (!tickets.Any())
+            {
+            return NotFound();
+            }
+
+            var user = await _usersService.Get(username);
+            
+            var index= 1;
+             foreach (Ticket ticket in tickets)
+            {
+                if(index>model.amount)
+                {
+                    break;
+                }
+                ticket.status = 0;
+                user.tickets.Add(ticket.Id);
+                _ticketService.Update(ticket.Id, ticket);
+                index = index+1;
+            }
+
+
+            
+            _usersService.Update(username, user);
+            return NoContent();
+        }
+
 
         [HttpDelete("{id:length(24)}")]
         public IActionResult Delete(string id)

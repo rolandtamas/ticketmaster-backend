@@ -28,10 +28,12 @@ namespace ticketmaster.Services
 
          
         }
-       
+       //GET ALL MATCHES
         public List<Match> Get() {
-            var teams = _teamService.GetCollection();
+            return _matches.Find(match => true).ToList();
+           /* var teams = _teamService.GetCollection();
             /* THIS IS A JOIN QUERY */
+            /*
             var query1 = from m in _matches.AsQueryable()
                          join t in teams.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
 
@@ -59,13 +61,16 @@ namespace ticketmaster.Services
                          };
 
             var matchesAndTeams = query2.ToList();
-            return matchesAndTeams;
+            return matchesAndTeams; */
 
 
 
             /*return _matches.Find(match => true).ToList();*/
 
         }
+<<<<<<< HEAD
+       
+=======
         public IQueryable<Match> GetMatchesAsIQueryable()
         {
             var teams = _teamService.GetCollection();
@@ -104,6 +109,7 @@ namespace ticketmaster.Services
             /*return _matches.Find(match => true).ToList();*/
         }
 
+>>>>>>> master
 
 
         public Match Get(string id) =>
