@@ -9211,19 +9211,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sergi\\.nuget\\packages\\": {}
+    "C:\\Users\\Roland\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\ticketmaster.csproj",
+      "projectUniqueName": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
       "projectName": "ticketmaster",
-      "projectPath": "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\ticketmaster.csproj",
-      "packagesPath": "C:\\Users\\sergi\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sergi\\Downloads\\Angular\\TicketMaster Backend\\obj\\",
+      "projectPath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\ticketmaster.csproj",
+      "packagesPath": "C:\\Users\\Roland\\.nuget\\packages\\",
+      "outputPath": "F:\\Facultate\\ticketmaster\\BackEnd\\ticketmaster\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sergi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Roland\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -9330,7 +9330,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
