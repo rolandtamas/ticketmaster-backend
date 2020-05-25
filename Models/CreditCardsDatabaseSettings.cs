@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ticketmaster.Models
 {
-    public class CreditCardsDataBaseSettings : ICreditCardsDatabaseSettings
+    public class CreditCardsDatabaseSettings : ICreditCardsDatabaseSettings
     {
         public string DatabaseCollectionName { get; set; }
         public string ConnectionString { get; set; }

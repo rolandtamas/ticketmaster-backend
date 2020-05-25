@@ -19,7 +19,6 @@ namespace ticketmaster.Services
         private readonly IMongoClient _client;
         private readonly IMongoDatabase _database;
         private readonly ITicketsDatabaseSettings _settings;
-
         private readonly MatchesService _matchesService;
         private readonly UsersService _usersService;
         public TicketsService(ITicketsDatabaseSettings settings, MatchesService matchesService, UsersService usersService)

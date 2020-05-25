@@ -54,61 +54,61 @@ namespace ticketmaster
 
             services.AddSingleton<FormsService>(); /* FORMS COLLECTION IMPORTED */
 
-            services.Configure<TeamsDataBaseSettings>(
-       Configuration.GetSection(nameof(TeamsDataBaseSettings)));
+            services.Configure<TeamsDatabaseSettings>(
+       Configuration.GetSection(nameof(TeamsDatabaseSettings)));
 
             services.AddSingleton<ITeamsDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<TeamsDataBaseSettings>>().Value);
+                sp.GetRequiredService<IOptions<TeamsDatabaseSettings>>().Value);
 
             services.AddSingleton<TeamsService>(); /* TEAMS COLELCTION IMPORTED */
 
 
-            services.Configure<MatchesDataBaseSettings>(
-        Configuration.GetSection(nameof(MatchesDataBaseSettings)));
+            services.Configure<MatchesDatabaseSettings>(
+        Configuration.GetSection(nameof(MatchesDatabaseSettings)));
 
             services.AddSingleton<IMatchesDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<MatchesDataBaseSettings>>().Value);
+                sp.GetRequiredService<IOptions<MatchesDatabaseSettings>>().Value);
 
             services.AddSingleton<MatchesService>(); /*MATCHES COLLECTION IMPORTED */
 
-            services.Configure<TicketsDataBaseSettings>(
-       Configuration.GetSection(nameof(TicketsDataBaseSettings)));
+            services.Configure<TicketsDatabaseSettings>(
+       Configuration.GetSection(nameof(TicketsDatabaseSettings)));
 
             services.AddSingleton<ITicketsDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<TicketsDataBaseSettings>>().Value);
+                sp.GetRequiredService<IOptions<TicketsDatabaseSettings>>().Value);
 
             services.AddSingleton<TicketsService>(); /*TICKETS COLLECTION IMPORTED */
 
-            services.Configure<UsersDataBaseSettings>(
-      Configuration.GetSection(nameof(UsersDataBaseSettings)));
+            services.Configure<UsersDatabaseSettings>(
+      Configuration.GetSection(nameof(UsersDatabaseSettings)));
 
             services.AddSingleton<IUsersDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<UsersDataBaseSettings>>().Value);
+                sp.GetRequiredService<IOptions<UsersDatabaseSettings>>().Value);
 
             services.AddSingleton<UsersService>(); /*USERS COLLECTION IMPORTED */
 
-            services.Configure<CreditCardsDataBaseSettings>(
-      Configuration.GetSection(nameof(CreditCardsDataBaseSettings)));
+            services.Configure<CreditCardsDatabaseSettings>(
+      Configuration.GetSection(nameof(CreditCardsDatabaseSettings)));
 
             services.AddSingleton<ICreditCardsDatabaseSettings>(sp =>
-                sp.GetRequiredService<IOptions<CreditCardsDataBaseSettings>>().Value);
+                sp.GetRequiredService<IOptions<CreditCardsDatabaseSettings>>().Value);
 
             services.AddSingleton<CreditCardsService>(); /*CREDIT CARDS COLLECTION */
 
-            services.AddScoped<IAuthRepository, AuthRepository>(); /*ADDING THE AUTH REPOSITORY*/
+            services.AddSingleton<IAuthRepository, AuthRepository>(); /*ADDING THE AUTH REPOSITORY*/
 
-            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+            /*services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options =>
                 {
                     options.TokenValidationParameters = new TokenValidationParameters
                     {
                         ValidateIssuerSigningKey = true,
                         IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII
-                         .GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                         .GetBytes(Configuration.GetSection("AppSettings:Token").Value.ToString())),
                         ValidateIssuer = false,
                         ValidateAudience = false
                     };
-                });
+                });*/
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

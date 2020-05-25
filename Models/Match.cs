@@ -21,14 +21,16 @@ namespace ticketmaster.Models
         public string teamHost { get; set; }
         [BsonIgnore]
         public int ticketCount {get; set;}
-       /* 
-         public Team GetTeamAway (MongoDatabase db)
-         {
-             return this.teamAwayObject = db.FetchDBRefAs<Team>(teamAway);
-         }
-         public Team GetTeamHost (MongoDatabase db)
-         {
-             return this.teamHostObject = db.FetchDBRefAs<Team>(teamHost);
-         } */ 
+        public object teamAwayId { get; internal set; }
+        public object teamHostId { get; internal set; }
+        /* 
+public Team GetTeamAway (MongoDatabase db)
+{
+return this.teamAwayObject = db.FetchDBRefAs<Team>(teamAway);
+}
+public Team GetTeamHost (MongoDatabase db)
+{
+return this.teamHostObject = db.FetchDBRefAs<Team>(teamHost);
+} */
     }
 }

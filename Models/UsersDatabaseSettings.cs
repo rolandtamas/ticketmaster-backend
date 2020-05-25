@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace ticketmaster.Models
 {
-    public class UsersDataBaseSettings : IUsersDatabaseSettings
+    public class UsersDatabaseSettings : IUsersDatabaseSettings
     {
         public string DatabaseCollectionName { get; set; }
         public string ConnectionString { get; set; }

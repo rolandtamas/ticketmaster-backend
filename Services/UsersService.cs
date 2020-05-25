@@ -9,6 +9,7 @@ using MongoDB.Bson;
 using MongoDB.Driver.Builders;
 using System.Diagnostics;
 using Microsoft.VisualBasic;
+using ticketmaster.Models;
 
 namespace ticketmaster.Services
 {
@@ -18,8 +19,6 @@ namespace ticketmaster.Services
         private readonly IMongoCollection<User> _users;
         private readonly IMongoClient _client;
         private readonly IMongoDatabase _database;
-        private readonly IUsersDatabaseSettings _settings;
-        private readonly MatchesService _matchesService;
         public UsersService(IUsersDatabaseSettings settings, MatchesService matchesService)
         {
             _client = new MongoClient(settings.ConnectionString);
@@ -27,8 +26,7 @@ namespace ticketmaster.Services
     
 
             _users = _database.GetCollection<User>(settings.DatabaseCollectionName);
-            _settings = settings;
-            _matchesService = matchesService;
+            
 
          
         }

@@ -68,10 +68,8 @@ namespace ticketmaster.Services
             /*return _matches.Find(match => true).ToList();*/
 
         }
-<<<<<<< HEAD
-       
-=======
-        public IQueryable<Match> GetMatchesAsIQueryable()
+
+       public IQueryable<Match> GetMatchesAsIQueryable()
         {
             var teams = _teamService.GetCollection();
             /* THIS IS A JOIN QUERY */
@@ -85,7 +83,7 @@ namespace ticketmaster.Services
                              date = m.date,
                              teamAwayId = m.teamAwayId,
                              teamHostId = m.teamHostId,
-                             teamAway = teamAwayInfo.First(),
+                             teamAway = teamAwayInfo.First().ToString(),
                              teamHost = null
                          };
             var query2 = from m in query1
@@ -98,7 +96,7 @@ namespace ticketmaster.Services
                              teamAwayId = m.teamAwayId,
                              teamHostId = m.teamHostId,
                              teamAway = m.teamAway,
-                             teamHost = teamHostInfo.First()
+                             teamHost = teamHostInfo.First().ToString()
                          };
 
 
@@ -108,8 +106,6 @@ namespace ticketmaster.Services
 
             /*return _matches.Find(match => true).ToList();*/
         }
-
->>>>>>> master
 
 
         public Match Get(string id) =>
