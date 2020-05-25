@@ -12,11 +12,12 @@ namespace ticketmaster.Models
     public class CreditCard
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId Id { get; set; }
+       [BsonRepresentation(BsonType.ObjectId)]
+        public string Id { get; set; }
         public string creditCardNumber  { get; set; }
         public string creditCardHolder  { get; set; }
         public string expirationDate  {get; set;}
+        
         public string cvv  {get; set;}
     }
 }

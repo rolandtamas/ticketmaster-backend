@@ -7,7 +7,11 @@ using Microsoft.Extensions.Logging;
 using MongoDB.Driver;
 using ticketmaster.Models;
 using ticketmaster.Services;
+using ticketmaster.DTO;
 using Microsoft.AspNetCore.Authorization;
+using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
+using MongoDB.Entities;
 // For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace ticketmaster.Controllers
@@ -19,10 +23,12 @@ namespace ticketmaster.Controllers
     {
         
         private readonly CreditCardsService _creditCardsService;
+        private readonly UsersService _usersService;
        
-        public CreditCardController(CreditCardsService CreditCardService)
+        public CreditCardController(CreditCardsService CreditCardService, UsersService UsersService)
         {
             _creditCardsService = CreditCardService;
+            _usersService = UsersService;
         }
         
         [Authorize]
@@ -47,13 +53,30 @@ namespace ticketmaster.Controllers
 
             return creditCards;
         }
-
+        [Authorize]
         [HttpPost]
-        public ActionResult<CreditCard> Create(CreditCard m)
+        public async Task<ActionResult<CreditCard>> Create(string username, CreditCardForAddingDTO creditCardModel)
         {
-            _creditCardsService.Create(m);
 
-            return CreatedAtRoute("GetCreditCard", new { id = m.Id.ToString() }, m);
+            var user = await _usersService.Get(username);
+
+            if (user == null)
+            {
+                return NotFound();
+            }
+
+            var creditCard = new CreditCard {
+                creditCardNumber=creditCardModel.creditCardNumber,
+                creditCardHolder=creditCardModel.creditCardHolder,
+                expirationDate=creditCardModel.expirationDate,
+                cvv=creditCardModel.cvv,
+            };
+          var newcc =  _creditCardsService.Create(creditCard);
+            user.creditCards.Add(newcc.Id);
+            _usersService.Update(user.username, user);
+
+
+            return StatusCode(201);
         }
 
         [HttpPut("{id:length(24)}")]
@@ -70,11 +93,11 @@ namespace ticketmaster.Controllers
 
             return NoContent();
         }
-
-        [HttpDelete("{id:length(24)}")]
-        public IActionResult Delete(string id)
+        [Authorize]
+        [HttpDelete]
+        public async Task <IActionResult> Delete(string username, string creditCardId)
         {
-            var creditCard = _creditCardsService.Get(id);
+            var creditCard = _creditCardsService.Get(creditCardId);
 
             if (creditCard == null)
             {
@@ -82,6 +105,10 @@ namespace ticketmaster.Controllers
             }
 
             _creditCardsService.Remove(creditCard);
+            var user = await _usersService.Get(username);
+            user.creditCards.Remove(creditCardId);
+            _usersService.Update(username, user);
+
 
             return NoContent();
         }

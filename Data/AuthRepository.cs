@@ -62,6 +62,18 @@ namespace ticketmaster.Data
             return user;
         }
 
+        public User Update(User user, string password)
+        {
+            byte[]passwordHash, passwordSalt;
+            CreatePasswordHash(password, out passwordHash, out passwordSalt);
+
+            user.passwordHash = passwordHash;
+            user.passwordSalt = passwordSalt;
+
+            _usersService.Update(user.username, user);
+            return user;
+        }
+
         public async Task<bool> UserExists(string username)
         {
             var user = await _usersService.Get(username);

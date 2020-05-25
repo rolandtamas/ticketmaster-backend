@@ -43,7 +43,7 @@ namespace ticketmaster.Services
            var user = await _usersService.Get(username);
            
             List <CreditCard> list = new List<CreditCard>();
-            foreach (ObjectId creditCardId in user.creditCards)
+            foreach (string creditCardId in user.creditCards)
             {
                 list.Add(_creditCards.Find<CreditCard>(creditCard => creditCard.Id.Equals(creditCardId)).FirstOrDefault());
             }
@@ -52,7 +52,7 @@ namespace ticketmaster.Services
         }
 
          public CreditCard Get(string id) =>
-            _creditCards.Find<CreditCard>(creditCard => creditCard.Id.Equals( id)).FirstOrDefault();
+            _creditCards.Find<CreditCard>(creditCard => creditCard.Id == id).FirstOrDefault();
 
 
         public CreditCard Create(CreditCard CreditCard)

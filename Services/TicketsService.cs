@@ -71,7 +71,7 @@ namespace ticketmaster.Services
            var user = await _usersService.Get(username);
            var  matches = _matchesService.GetCollection();
             List <Ticket> list = new List<Ticket>();
-            foreach (ObjectId ticketid in user.tickets)
+            foreach (string ticketid in user.tickets)
             {
                 list.Add(_tickets.Find<Ticket>(ticket => ticket.Id.Equals(ticketid)).FirstOrDefault());
             }
@@ -95,9 +95,18 @@ namespace ticketmaster.Services
             var ticketsAndMatches = query.ToList();
             return ticketsAndMatches; 
         }
+        public List<Ticket> GetByMatchId(string matchId)
+        {
+            return _tickets.Find(ticket => ticket.matchId == matchId).ToList();
+        }
+
+        public List<Ticket> GetAvailableByMatchId(string matchId)
+        {
+            return _tickets.Find(ticket => ticket.matchId == matchId && ticket.status == 1).ToList();
+        }
 
          public Ticket Get(string id) =>
-            _tickets.Find<Ticket>(ticket => ticket.Id.Equals( id)).FirstOrDefault();
+            _tickets.Find<Ticket>(ticket => ticket.Id == id).FirstOrDefault();
 
 
         public Ticket Create(Ticket Ticket)
@@ -107,7 +116,7 @@ namespace ticketmaster.Services
         }
 
         public void Update(string id, Ticket TicketIn) =>
-            _tickets.ReplaceOne(Ticket => Ticket.Id.Equals(id), TicketIn);
+            _tickets.ReplaceOne(Ticket => Ticket.Id==id, TicketIn);
 
         public void Remove(Ticket TicketIn) =>
             _tickets.DeleteOne(Ticket => Ticket.Id == TicketIn.Id);

@@ -23,52 +23,37 @@ namespace ticketmaster.Controllers
         private readonly MatchesService _matchService;
         private readonly IMongoCollection<Match> _matchesCollection;
         private readonly IMongoCollection<Team> _teamsCollection;
+        private readonly TicketsService _ticketsService;
 
        
-        public MatchController(MatchesService MatchService)
+        public MatchController(MatchesService MatchService, TicketsService ticketsService)
         {
             _matchService = MatchService;
+            _ticketsService = ticketsService;
         
           
         }
-        /* Changing this bit below so it connects to the Teams Collection and shows the Team Names as well*/
+        //LIST OF AVAILABLE MATCHES
         [HttpGet]
         public ActionResult<List<Match>> Get()
         {
-            return _matchService.Get();
+            var all_matches = _matchService.Get();
 
-            /* THIS IS A JOIN QUERY */
-            /*
-            var query1 = from m in _matchesCollection.AsQueryable()
-                         join t in _teamsCollection.AsQueryable() on m.teamAwayId equals t.Id into teamAwayInfo
+            foreach(Match match in all_matches)
+            {
+                var tickets = _ticketsService.GetAvailableByMatchId(match.Id);
+                /*if(!tickets.Any())
+                {
+                    all_matches.Remove(match);
+                } */
+                match.ticketCount = tickets.Count;
+            }
+            
+            return all_matches;
 
-                         select new Match()
-                         {
-                             Id = m.Id,
+            
 
-                             date = m.date,
-                             teamAwayId = m.teamAwayId,
-                             teamHostId = m.teamHostId,
-                            teamAway = teamAwayInfo.First(),
-                            teamHost = null
-                        };
-            var query2 = from m in query1.ToList()
-                    join t in _teamsCollection.AsQueryable() on m.teamHostId equals t.Id into teamHostInfo
-
-                    select new Match()
-                    {
-                        Id = m.Id,
-                        date = m.date,
-                        teamAwayId = m.teamAwayId,
-                        teamHostId = m.teamHostId,
-                        teamAway = m.teamAway,
-                        teamHost = teamHostInfo.First()
-                    };
-
-            var matchesAndTeams = query2.ToList();
-            return matchesAndTeams;
-            */
-            /* THIS IS A QUERY USING DBREF */
+          
         }
         
         [HttpGet("{id:length(24)}", Name = "GetMatch")]

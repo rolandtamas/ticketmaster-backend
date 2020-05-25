@@ -11,13 +11,15 @@ namespace ticketmaster.Models
     {
         [BsonId]
         [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId Id { get; set; }
+        public string Id { get; set; }
       
         public Int32 status { get; set; }
         public string seat { get; set; }
         public string sector { get; set; }
         public double price { get; set; }
-        public ObjectId matchId { get; set; }
+ 
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string matchId { get; set; }
         [BsonIgnore]
         public Match match { get; set; }
     }

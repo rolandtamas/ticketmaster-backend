@@ -44,6 +44,9 @@ namespace ticketmaster.Controllers
                 username = userForRegisterDTO.username,
                 firstName = userForRegisterDTO.firstName,
                 lastName = userForRegisterDTO.lastName,
+                email = userForRegisterDTO.email,
+                creditCards = new List<string>(),
+                tickets = new List<string>(),
 
 
             };
