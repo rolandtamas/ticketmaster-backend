@@ -13,7 +13,6 @@ namespace ticketmaster.Models
     }
 
 
-
     public interface ITicketsDatabaseSettings
     {
         string DatabaseCollectionName { get; set; }

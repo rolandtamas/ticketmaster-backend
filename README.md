@@ -7,5 +7,9 @@ Development Log:
 	[ x ] Contact component; a user can fill a form and send a suggestion form to our e-mail. The form will be stored in a suggestion form database.
 
 
-	[  ] Matches component; a user can view available matches and choose to buy a ticket to any one of them. 
+	[ x ] Matches component; a user can view available matches and choose to buy a ticket to any one of them. 
+	
+	[ x ] Buy ticket component; a user can buy a ticket, complete a form and submit his request to the server.
+	
+	[  ] Login & Register Component; allows user registration and Login
 

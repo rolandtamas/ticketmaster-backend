@@ -94,15 +94,25 @@ namespace ticketmaster.Controllers
         [HttpPut("{id:length(24)}")]
         public IActionResult Update(string id, Match min)
         {
-            var contactform = _matchService.Get(id);
+            var match = _matchService.Get(id);
 
-            if (contactform == null)
+            if (match == null)
             {
                 return NotFound();
             }
 
             _matchService.Update(id, min);
 
+            return NoContent();
+        }
+
+        [HttpPut]
+        public IActionResult Update(string id, int ticketCount,Match m) {
+
+            var match = _matchService.Get(id);
+            if (match == null)
+            { return NotFound(); }
+            _matchService.Update(ticketCount.ToString(),m);
             return NoContent();
         }
 

@@ -102,7 +102,6 @@ namespace ticketmaster.Services
 
 
             /*return _matches.Find(match => true).ToList();*/
-
         }
 
 
@@ -118,6 +117,10 @@ namespace ticketmaster.Services
 
         public void Update(string id, Match MatchIn) =>
             _matches.ReplaceOne(Match => Match.Id.Equals(id), MatchIn);
+
+        /*public void Update(int amount, Match m) { 
+            _matches.ReplaceOne(Match => Match.ticketCount == amount, m);
+        }*/
 
         public void Remove(Match MatchIn) =>
             _matches.DeleteOne(Match => Match.Id == MatchIn.Id);

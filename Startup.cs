@@ -70,7 +70,6 @@ namespace ticketmaster
                 sp.GetRequiredService<IOptions<TicketsDataBaseSettings>>().Value);
 
             services.AddSingleton<TicketsService>(); /*TICKETS COLLECTION IMPORTED */
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
