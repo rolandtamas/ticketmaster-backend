@@ -45,6 +45,19 @@ namespace ticketmaster
                 sp.GetRequiredService<IOptions<FormsDatabaseSettings>>().Value);
 
             services.AddSingleton<FormsService>();
+
+            services.Configure<MatchesDatabaseSettings>(
+        Configuration.GetSection(nameof(MatchesDatabaseSettings)));
+
+            services.AddSingleton<IMatchesDatabaseSettings>(sp =>
+                sp.GetRequiredService<IOptions<MatchesDatabaseSettings>>().Value);
+
+            services.AddSingleton<MatchesService>();
+
+            services.Configure<TicketsDatabaseSettings>(Configuration.GetSection(nameof(TicketsDatabaseSettings)));
+            services.AddSingleton<ITicketsDatabaseSettings>(sp => sp.GetRequiredService<IOptions<TicketsDatabaseSettings>>().Value);
+            services.AddSingleton<TicketsService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
