@@ -235,3 +235,4 @@ C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\Mi
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.csproj.CoreCompileInputs.cache
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\sergi\Downloads\Angular\TicketMaster Backend\obj\Debug\netcoreapp3.1\ticketmaster.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\sergi\Downloads\Angular\TicketMaster Backend\bin\Debug\netcoreapp3.1\appsettings.json
